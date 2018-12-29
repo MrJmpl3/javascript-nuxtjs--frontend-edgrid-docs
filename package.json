@@ -1,7 +1,7 @@
 {
   "name": "nuxt-edgrid",
   "version": "1.0.0",
-  "description": "My peachy Nuxt.js project",
+  "description": "Nuxt.js project",
   "author": "MrJmpl3",
   "private": true,
   "scripts": {
@@ -11,14 +11,36 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/markdownit": "^1.2.3",
+    "consola": "^2.3.0",
     "cross-env": "^5.2.0",
+    "edteam-style-guides": "0.0.45",
+    "express": "^4.16.3",
+    "helmet": "^3.15.0",
+    "node-sass": "^4.11.0",
     "nuxt": "^2.0.0",
-    "express": "^4.16.3"
+    "nuxt-sass-resources-loader": "^2.0.5",
+    "prismjs": "^1.15.0",
+    "sass-loader": "^7.1.0",
+    "vue": "^2.5.21",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0",
+    "@nuxtjs/eslint-config": "0.0.1",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.11.1",
+    "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.1.0",
-    "eslint-plugin-prettier": "2.6.2",
-    "prettier": "1.14.3"
+    "eslint-config-standard": "^12.0.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "nodemon": "^1.11.0",
+    "prettier": "^1.15.3"
   }
 }
