@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "paths": {
+      "@/assets/*": ["assets/*"],
+      "@/components/*": ["components/*"],
+      "@/helpers/*": ["helpers/*"],
+      "@/i18n/*": ["i18n/*"],
+      "@/layouts/*": ["layouts/*"],
+      "@/middleware/*": ["middleware/*"],
+      "@/pages/*": ["pages/*"],
+      "@/plugins/*": ["plugins/*"],
+      "@/server/*": ["server/*"],
+      "@/static/*": ["static/*"],
+      "@/store/*": ["store/*"]
+    }
+  },
+  "exclude": ["node_modules", ".nuxt"]
+}

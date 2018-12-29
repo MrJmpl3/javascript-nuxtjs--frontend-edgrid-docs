@@ -1,55 +1,71 @@
 <template>
-  <div>
-    <nuxt/>
+  <div class="wrapper">
+    <Header></Header>
+    <Banner
+      v-if="banner"
+      :img="bannerOptions.img"
+      :title-banner="bannerOptions.title"
+      :description-banner="bannerOptions.description"
+      :clase="bannerOptions.clase"
+      :boton="bannerOptions.boton"
+      :boton-class="bannerOptions.botonClass"
+      :boton-text="bannerOptions.botonText"
+      :boton-url="bannerOptions.botonUrl"
+      :botones="bannerOptions.botones"
+    ></Banner>
+    <slot v-if="docsMenu">
+      <div class="l-block"></div>
+      <div class="ed-grid cols-l-4 main-section l-big-section">
+        <aside class="main-sidebar sidebar-first" itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary">
+          <div id="vertical-menu-toggle" class="vertical-menu-toggle to-l" data-content="Filtros"></div>
+          <MenuDocs></MenuDocs>
+        </aside>
+        <div class="span-l-3"><nuxt /></div>
+      </div>
+    </slot>
+    <slot v-else>
+      <div class="l-block"></div>
+      <div class="main-section l-big-section"><nuxt /></div>
+    </slot>
+    <Footer></Footer>
   </div>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+<script>
+import MenuDocs from '@/components/molecules/MenuDocs';
+import Banner from '@/components/organisms/Banner';
+import Footer from '@/components/organisms/Footer';
+import Header from '@/components/organisms/Header';
+import { mapState } from 'vuex';
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-}
+export default {
+  components: { MenuDocs, Footer, Banner, Header },
+  computed: {
+    ...mapState(['banner', 'bannerOptions']),
+    docsMenu() {
+      switch (this.$route.name) {
+        case 'documentacion':
+        case 'documentacion-instalacion':
+        case 'documentacion-estructura':
+        case 'documentacion-personalizar':
+        case 'documentacion-breakpoints':
+        case 'documentacion-layout-flexbox':
+        case 'documentacion-layout-css-grid':
+        case 'documentacion-layout':
+        case 'documentacion-distribucion':
+        case 'documentacion-alineacion':
+          return true;
+        default:
+          return false;
+      }
+    }
+  }
+};
+</script>
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+<style lang="scss">
+.wrapper {
+  display: flex;
+  flex-direction: column;
 }
 </style>
