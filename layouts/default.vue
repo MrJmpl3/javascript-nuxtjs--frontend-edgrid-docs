@@ -54,6 +54,14 @@ export default {
         case 'documentacion-layout':
         case 'documentacion-distribucion':
         case 'documentacion-alineacion':
+        case 'documentacion-visibilidad':
+        case 'documentacion-mediaqueries':
+        case 'documentacion-base':
+        case 'documentacion-modo-dev':
+        case 'documentacion-funciones':
+        case 'documentacion-videos':
+        case 'documentacion-menus':
+        case 'documentacion-prototipado':
           return true;
         default:
           return false;

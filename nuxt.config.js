@@ -41,14 +41,16 @@ module.exports = {
 
   loading: { color: '#fff' },
 
-  /*
-   ** Global CSS
-   */
+  //
+  // Global CSS
+  //
+
   css: [{ src: '@/assets/styles/styles.scss', lang: 'scss' }],
 
-  /*
-   ** Plugins to load before mounting the App
-   */
+  //
+  // Plugins to load before mounting the App
+  //
+
   plugins: [],
 
   //
@@ -57,13 +59,15 @@ module.exports = {
 
   modules: ['@nuxtjs/markdownit'],
 
-  /*
-   ** Build configuration
-   */
+  //
+  // Build configuration
+  //
+
   build: {
-    /*
-     ** You can extend webpack config here
-     */
+    //
+    // You can extend webpack config here
+    //
+
     extend(config, ctx) {
       //
       // Run ESLint on save

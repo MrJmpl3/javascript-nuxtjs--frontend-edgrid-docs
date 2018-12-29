@@ -16,6 +16,7 @@
     "cross-env": "^5.2.0",
     "edteam-style-guides": "0.0.45",
     "express": "^4.16.3",
+    "helmet": "^3.15.0",
     "node-sass": "^4.11.0",
     "nuxt": "^2.0.0",
     "nuxt-sass-resources-loader": "^2.0.5",

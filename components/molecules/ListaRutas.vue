@@ -1,9 +1,12 @@
 <template>
   <ul>
     <li v-for="menu in menus" :key="menu.indice" itemprop="url">
-      <nuxt-link :to="menu.ruta" :target="menu.ruta === 'https://ed.team' ? '_blank' : ''" itemprop="name" :title="`Enlace de ${menu.titulo}`" exact>
+      <nuxt-link v-if="menu.ruta !== 'https://ed.team'" :to="menu.ruta" itemprop="name" :title="`Enlace de ${menu.titulo}`" exact>
         {{ menu.titulo }}
       </nuxt-link>
+      <a v-if="menu.ruta === 'https://ed.team'" :href="menu.ruta" target="_blank" itemprop="name" :title="`Enlace de ${menu.titulo}`">
+        {{ menu.titulo }}
+      </a>
     </li>
   </ul>
 </template>
